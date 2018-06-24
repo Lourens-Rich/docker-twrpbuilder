@@ -5,7 +5,7 @@
 >- **`GitLab CI`**
 >> `.gitlab-ci.yml`
 >> ```yml
->>image: surendrajat/twrp-builder:latest
+>>image: surendrajat/twrp-builder:omni-7.1
 >>build:
 >>  script:
 >>  - apt-get -yy update && apt-get -y aria2
@@ -26,7 +26,7 @@
 >>services:
 >>  - docker
 >>before_install:
->>  - docker pull surendrajat/twrp-builder:latest
+>>  - docker pull surendrajat/twrp-builder:omni-7.1
 >>before_script:
 >>  - cd $HOME && mkdir twrp
 >>  - wget -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-20180211/omni_twrp-5.1.1-20180211-norepo.tar.xz -O $HOME/twrp.tar.xz
