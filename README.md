@@ -1,4 +1,4 @@
-## TWRP-Builder Docker  ![Docker Build Status](https://img.shields.io/docker/build/surendrajat/twrp-builder.svg) ![Docker Automated build](https://img.shields.io/docker/automated/surendrajat/twrp-builder.svg)
+## TWRP-Builder Docker  ![Docker Build Status](https://img.shields.io/docker/build/surendrajat/twrp-builder.svg)
 > A minimal docker image based on `debian:stretch-slim` & used by `TWRPBuilder Project`  for CI/CD of unofficial twrp builds
 
 ### Usage:
