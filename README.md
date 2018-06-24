@@ -28,10 +28,9 @@
 >>before_install:
 >>  - docker pull surendrajat/twrp-builder:latest
 >>before_script:
->>- cd $HOME && mkdir twrp
->>- wget -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-20180211/omni_twrp-5.1.1-20180211-norepo.tar.xz
->>  -O $HOME/twrp.tar.xz
->>- tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
+>>  - cd $HOME && mkdir twrp
+>>  - wget -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-20180211/omni_twrp-5.1.1-20180211-norepo.tar.xz -O $HOME/twrp.tar.xz
+>>  - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 >>script:
 >>  - cd $HOME/twrp/ && git clone https://github.com/surendrajat/android_device_samsung_o7prolte.git device/samsung/o7prolte
 >>  - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
