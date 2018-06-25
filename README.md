@@ -9,11 +9,11 @@
 >>build:
 >>  script:
 >>  - apt-get -yy update && apt-get -y install aria2
->>  - aria2c -x16 -s16 -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-20180211/omni_twrp-5.1.1-20180211-norepo.tar.xz
+>>  - aria2c -x16 -s16 -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-7.1.2-20180326-norepo/omni_twrp-7.1.2-20180326-norepo.tar.xz
 >>    -d $HOME/ -o twrp.tar.xz
 >>  - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 >>  - cd $HOME/twrp/ && mkdir -p device/samsung/o7prolte && mv /builds/Surendrajat/andorid_device_samsung_o7prolte/* device/samsung/o7prolte/
->>  - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
+>>  - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder -b android-6.0
 >>  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery
 >>  - source build/envsetup.sh && lunch omni_o7prolte-eng && make -j16 recoveryimage
 >>  - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
@@ -29,11 +29,11 @@
 >>  - docker pull surendrajat/twrp-builder:omni-7.1
 >>before_script:
 >>  - cd $HOME && mkdir twrp
->>  - wget -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-20180211/omni_twrp-5.1.1-20180211-norepo.tar.xz -O $HOME/twrp.tar.xz
+>>  - wget -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-7.1.2-20180326-norepo/omni_twrp-7.1.2-20180326-norepo.tar.xz -O $HOME/twrp.tar.xz
 >>  - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
 >>script:
 >>  - cd $HOME/twrp/ && git clone https://github.com/surendrajat/android_device_samsung_o7prolte.git device/samsung/o7prolte
->>  - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder
+>>  - git clone https://github.com/TwrpBuilder/device_generic_twrpbuilder.git device/generic/twrpbuilder -b android-6.0
 >>  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery
 >>  - |
 >>    docker run --rm -i -v "$(pwd):/root/twrp/:rw,z" surendrajat/twrp-builder bash << EOF
