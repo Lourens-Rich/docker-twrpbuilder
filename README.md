@@ -8,7 +8,7 @@
 >>image: surendrajat/twrp-builder:omni-7.1
 >>build:
 >>  script:
->>  - apt-get -yy update && apt-get -y aria2
+>>  - apt-get -yy update && apt-get -y install aria2
 >>  - aria2c -x16 -s16 -q https://github.com/TwrpBuilder/twrp-sources/releases/download/omni_twrp-5.1.1-20180211/omni_twrp-5.1.1-20180211-norepo.tar.xz
 >>    -d $HOME/ -o twrp.tar.xz
 >>  - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
