@@ -6,8 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # Required packages
 RUN apt-get -qq update && \
     apt-get install -y --no-install-recommends bc bison g++-multilib git make lzop python zip && \
+    apt-get install libncurses5:i386 \
     rm -rf /var/lib/apt/lists/*
-    apt-get install libncurses5:i386
 
 ENV DEBAIN_FRONTEND teletype
 
